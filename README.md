@@ -1,4 +1,4 @@
-# PatriotCTF 2025 — Writeups
+# PatriotCTF 2025 Writeups
 
 This repository contains writeups for challenges solved during **PatriotCTF 2025**.  
 All writeups include the full solution and flag for educational purposes.
