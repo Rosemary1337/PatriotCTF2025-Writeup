@@ -1,7 +1,5 @@
 ## SPACE PIRATES 2 - PatriotCTF
 
-### Advanced Pirate Cipher — Treasure Map Decryption
-
 After completing Level 1, the pirates upgraded their encryption system. The Level 2 challenge requires us to find a 32‑byte input which, after being processed by the program, must match the provided `TARGET` array. All transformations in the binary are deterministic and reversible, which means the correct strategy is to invert the cipher step by step.
 
 ---
