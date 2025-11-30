@@ -1,12 +1,11 @@
-
-# Eighth Circle of Hell - PatriotCTF
+## Cipher from Hell - PatriotCTF
 
 **Challenge description:**  
 We've recovered an encrypted message from the eighth circle of Hell (Malbolge reference). The encryption uses a custom base-3 transformation with a substitution matrix. Can you recover the hidden flag?
 
 ---
 
-## Step 1: Understanding the Encryption
+### Step 1: Understanding the Encryption
 
 The encryption script takes the input flag as bytes, converts it to a big integer `s`, then processes it in base 3.
 
@@ -36,7 +35,7 @@ Key components:
 
 ---
 
-## Step 2: Reversing the Process
+### Step 2: Reversing the Process
 
 To decrypt, we need to:
 
@@ -48,7 +47,7 @@ To decrypt, we need to:
 
 ---
 
-## Step 3: Building the Decoder
+### Step 3: Building the Decoder
 
 ### Inverse Mapping
 We create a reverse lookup table from the `o` matrix:
@@ -65,7 +64,7 @@ We create a reverse lookup table from the `o` matrix:
 8 → (1,0)
 ```
 
-### Reconstruction
+#### Reconstruction
 If base-9 digits are `[g0, g1, g2, ...]`, then:
 - `g0 = o[a0][a_{n-1}]`
 - `g1 = o[a1][a_{n-2}]`
@@ -77,7 +76,7 @@ So we can fill the base-3 array symmetrically:
 
 ---
 
-## Step 4: Implementation
+### Step 4: Implementation
 
 ```python
 import math
@@ -133,7 +132,7 @@ print(flag_bytes.decode(errors='ignore'))
 
 ---
 
-## Step 5: Getting the Flag
+### Step 5: Getting the Flag
 
 Running this decoder on the provided `encrypted` file gives the flag:
 
@@ -143,6 +142,6 @@ pctf{a_l3ss_cr4zy_tr1tw1s3_op3r4ti0n_f37d4b}
 
 ---
 
-## Conclusion
+### Conclusion
 
 The challenge used a clever base-3 to base-9 transformation with a fixed substitution matrix. The key insight was recognizing the symmetric digit pairing and building the appropriate reverse mapping. The Malbolge reference was mainly thematic — the actual cryptography was a custom encoding scheme rather than Malbolge's infamous complexity.
